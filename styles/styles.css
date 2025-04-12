@@ -1,0 +1,258 @@
+/*fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+/*variables*/
+:root {
+  --color-green-900: hsl(183, 100%, 15%);
+  --color-green-400: hsl(172, 67%, 45%);
+  --color-grey-500: hsl(186, 14%, 43%);
+  --color-grey-400: hsl(184, 14%, 56%);
+  --color-grey-200: hsl(185, 41%, 84%);
+  --color-grey-50: hsl(189, 47%, 97%);
+  --color-white: hsl(0, 100%, 100%);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  background-color: var(--color-grey-200);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Calculator Container */
+.calculator {
+  background-color: var(--color-white);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  max-width: 920px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Input Section Styles */
+.calculator__input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  color: var(--color-grey-500);
+  font-size: 0.9rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  background-color: var(--color-grey-50);
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: right;
+  color: var(--color-green-900);
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--color-grey-200);
+}
+
+/* Remove arrows/spinners from number inputs */
+/* For Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Bill input icon */
+.input-wrapper.bill-input::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* People input icon */
+.input-wrapper.people-input::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* Tip Grid */
+.tip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tip-btn {
+  background-color: var(--color-green-900);
+  color: var(--color-white);
+  border: none;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tip-btn:hover {
+  background-color: var(--color-green-400);
+  color: var(--color-green-900);
+}
+
+.tip-btn:active {
+  background-color: var(--color-green-400);
+  color: var(--color-green-900);
+}
+
+.custom-tip {
+  font-size: 1.25rem;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+/* Results Section */
+.calculator__result-section {
+  background-color: var(--color-green-900);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-label {
+  color: var(--color-white);
+}
+
+.per-person {
+  color: var(--color-grey-400);
+  font-size: 0.8rem;
+}
+
+.amount {
+  color: var(--color-green-400);
+  font-size: 2.5rem;
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-green-400);
+  color: var(--color-green-900);
+  border: none;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.reset-btn:hover {
+  background-color: var(--color-grey-500);
+}
+
+/* Attribution */
+.attribution {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--color-grey-500);
+}
+
+.attribution a {
+  color: var(--color-green-900);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calculator {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .tip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 375px) {
+  .tip-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Logo */
+.logo {
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: var(--color-green-900);
+  letter-spacing: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
