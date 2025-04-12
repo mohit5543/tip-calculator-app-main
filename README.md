@@ -16,8 +16,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add here](https://github.com/mohit5543/time-tracking-dashboard-main)
-- Live Site URL: [Add here](https://mohit5543.github.io/tip-calculator-app-main/)
+- Solution URL: [Click here](https://github.com/mohit5543/time-tracking-dashboard-main)
+- Live Site URL: [Click here](https://mohit5543.github.io/tip-calculator-app-main/)
 
 ## 🔧 Built With
 
